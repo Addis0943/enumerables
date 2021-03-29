@@ -1,5 +1,4 @@
 require './enumerables'
-# rubocop:disable Metrics/BlockLength
 
 describe Enumerable do
   describe '#my_each' do
@@ -138,4 +137,3 @@ describe Enumerable do
     end
   end
 end
-# rubocop:enable Metrics/BlockLength

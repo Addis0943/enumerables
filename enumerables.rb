@@ -1,3 +1,5 @@
+# rubocop:disable Metrics/ModuleLength
+
 module Enumerable
   def my_each
     if block_given?
@@ -85,7 +87,7 @@ module Enumerable
 
     return my_inject_with_block(array, args, block) if block_given?
 
-    raise LocalJumpError, "no block given" if args.empty?
+    raise LocalJumpError, 'no block given' if args.empty?
 
     memo = args.size == 2 ? args[0] : array[0]
     sym = args.size == 2 ? args[1] : args[0]
@@ -125,3 +127,4 @@ module Enumerable
     new_array
   end
 end
+# rubocop:enable Metrics/ModuleLength

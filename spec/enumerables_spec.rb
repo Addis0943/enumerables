@@ -116,7 +116,7 @@ describe Enumerable do
   end
 
   describe "#my_inject" do
-    it "it returns the sum of all items" do
+    it "it returns the sum of all items given" do
       array = [1, 2, 3, 4]
       expect(array.my_inject { |sum, item| sum + item }).to eql(10)
     end

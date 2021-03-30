@@ -1,3 +1,5 @@
+# rubocop:disable Metrics/ModuleLength
+
 module Enumerable
   def my_each
     if block_given?
@@ -96,6 +98,10 @@ module Enumerable
     memo
   end
 
+  def multiply_els(array)
+    array.my_inject(:*)
+  end
+
   private
 
   def match_pattern?(item, pattern)
@@ -121,7 +127,4 @@ module Enumerable
     new_array
   end
 end
-
-def multiply_els(array)
-  array.my_inject(:*)
-end
+# rubocop:enable Metrics/ModuleLength

@@ -38,9 +38,19 @@ describe Enumerable do
       expect(array.my_all?(Numeric)).to eql(true)
     end
 
+    it 'returns false if not all items are Numerics' do
+      array = [1, "p", 3]
+      expect(array.my_all?(Numeric)).to eql(false)
+    end
+
     it "returns true if all items contain the letter 'd'" do
       array = %w[jordy addis hannad]
       expect(array.my_all?(/d/)).to eql(true)
+    end
+
+    it "returns false if not all items contain the letter 'j'" do
+      array = %w[jordy addis hanna]
+      expect(array.my_all?(/j/)).to eql(false)
     end
   end
   describe '#my_any?' do
@@ -122,7 +132,7 @@ describe Enumerable do
     end
     it 'it returns the sum of the array with the given value' do
       array = [1, 2, 3, 4]
-      expect(array.my_inject(10) { |sum, item| sum + item }).to eql(20)
+      expect(array.my_inject(10) { |sum, item| sum + item }).to eql(20)c
     end
     it 'returns the sum of the array using the given symbol' do
       array = [1, 2, 3, 4]
